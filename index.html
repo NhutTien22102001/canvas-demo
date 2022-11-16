@@ -8,6 +8,44 @@
     <title>Document</title>
 </head>
 
+<style>
+    .list-canvas {
+        position: relative;
+        width: max-content;
+        height: max-content;
+    }
+
+    .canvas-1 {
+        position: relative;
+    }
+
+    .canvas-2,
+    .canvas-3 {
+        position: absolute !important;
+    }
+
+    .canvas-1 {
+        z-index: 0;
+    }
+
+    .canvas-2 {
+        z-index: 1;
+    }
+
+    .canvas-3 {
+        z-index: 2;
+    }
+
+    .canvas-2,
+    .canvas-3 {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+</style>
+
 <body>
     <main>
         <div>
@@ -30,7 +68,17 @@
             <button id="downBtn">Download PNG</button>
         </div>
         <br>
-        <canvas id="canvas" width="0" height="0"></canvas>
+        <div class="list-canvas">
+            <div class="canvas-1">
+                <canvas class="canvas "></canvas>
+                <div class="">
+                    <canvas class="canvas-2 canvas" width="300" height="300"></canvas>
+                </div>
+                <div class="">
+                    <canvas class="canvas canvas-3" width="300" height="300"></canvas>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="./index.js"></script>
 </body>
